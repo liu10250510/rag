@@ -65,13 +65,15 @@ curl -F "file=@yourfile.pdf" -F "model_name=gpt-4o-mini" -F "model_provider=open
 
 ```
 rag/
-├── ragAPI.py         # FastAPI backend
-├── rag_ui.py         # Streamlit UI
-├── rag/ragretriver.py    # RAG retrieval logic
-├── setup.py          # Environment setup
-├── requirements.txt  # Python dependencies
-├── .env              # API keys and environment variables
-└── rag/data/         # Uploaded and processed files (gitignored)
+├── ragAPI.py           # FastAPI backend
+├── rag_ui.py           # Streamlit UI
+├── setup.py            # Environment setup
+├── requirements.txt    # Python dependencies
+├── .env                # API keys and environment variables
+├── rag/data/           # Uploaded and processed files (gitignored)
+├── rag/docload.py      # Load document logic
+├── rag/modelload.py    # Load model logic
+└──  rag/ragretriver.py  # RAG retrieval logic
 ```
 
 ## Notes
