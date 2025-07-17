@@ -73,7 +73,7 @@ rag/
 ├── rag/data/           # Uploaded and processed files (gitignored)
 ├── rag/docload.py      # Load document logic
 ├── rag/modelload.py    # Load model logic
-└──  rag/ragretriver.py  # RAG retrieval logic
+└── rag/ragretriver.py  # RAG retrieval logic
 ```
 
 ## Notes
