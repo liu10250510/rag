@@ -29,7 +29,7 @@ This project is a Retrieval-Augmented Generation (RAG) Question Answering system
 
 ## Usage
 
-### Run it in local computer (clone develop branch)
+### Run it in local computer (clone localservice branch)
 
 #### Start the FastAPI Backend
 
