@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.pdf
 build/
 develop-eggs/
 dist/
@@ -25,6 +26,11 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.streamlit/
+[secrets.toml](http://_vscodecontentref_/3)
+shared/
+etc/
+*.cfg
 
 # data
 rag/data/

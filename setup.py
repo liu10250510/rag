@@ -7,6 +7,7 @@ def setup_environment():
         st.write(f"OPENAI_API_KEY: {OPENAI_API_KEY}")
     except ImportError:
         pass
+    return OPENAI_API_KEY
     
 if __name__ == "__main__":
     setup_environment()
