@@ -84,7 +84,7 @@ rag/
 
 ## Notes
 
-- Make sure to add your API keys to the `.env` file or '.streamlit/secret.toml'.
+- Make sure to add your API keys to the `.env` file or `.streamlit/secret.toml`.
 - The `rag/data/` folder is ignored by git for privacy and storage reasons.
 - For production, run the backend and frontend separately.
 
