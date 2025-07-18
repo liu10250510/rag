@@ -1,5 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, Form
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, HTMLResponse
 import shutil
 import os
 import sys
@@ -7,6 +7,10 @@ sys.path.append(".")
 from rag.ragretriver import ragretriver  # Adjust import if needed
 
 app = FastAPI()
+
+@app.get("/", response_class=HTMLResponse)
+async def root():
+    return await main()
 
 async def main():
     return """

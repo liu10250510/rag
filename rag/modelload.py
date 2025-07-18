@@ -1,7 +1,7 @@
 import getpass
 import os
 import sys
-sys.path.append("..")
+sys.path.append(".")
 from setup import setup_environment
 
 def load_model(model_name, model_provider="openai"):

@@ -19,11 +19,11 @@ def pdf_loader(file_path):
 if __name__ == "__main__":
 	# Example usage
 	try:
-		pdf_documents = pdf_loader("./data/resume.pdf")
+		pdf_documents = PyPDFLoader("./rag/data/resume.pdf")
 	except Exception as e:
 		print(f"Error loading PDF document: {e}")
 	# Print the number of documents loaded
 	if pdf_documents:
-		print(f"Loaded {len(pdf_documents)} documents from the PDF file.")
+		print(f"Loaded documents from the PDF file.")
 	else:
 		print("No documents loaded from the PDF file.")

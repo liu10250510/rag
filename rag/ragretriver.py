@@ -44,7 +44,7 @@ def ragretriver(file_path, model_name="gpt-4o-mini", model_provider="openai"):
     return qa_chain
 
 if __name__ == "__main__":
-    qa_chain = ragretriver("./data/resume.pdf", model_name="gpt-4o-mini", model_provider="openai")
+    qa_chain = ragretriver("./rag/data/resume.pdf", model_name="gpt-4o-mini", model_provider="openai")
     
     if not qa_chain:
         print("Failed to initialize the retrieval chain.")
