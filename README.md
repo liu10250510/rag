@@ -29,7 +29,9 @@ This project is a Retrieval-Augmented Generation (RAG) Question Answering system
 
 ## Usage
 
-### Start the FastAPI Backend
+### Run it in local computer (clone develop branch)
+
+#### Start the FastAPI Backend
 
 ```sh
 uvicorn ragAPI:app --reload
@@ -38,7 +40,7 @@ uvicorn ragAPI:app --reload
 - The API will be available at `http://localhost:8000`
 - Swagger UI docs: `http://localhost:8000/docs`
 
-### Start the Streamlit UI
+#### Start the Streamlit UI
 
 In a new terminal:
 
@@ -48,7 +50,7 @@ streamlit run rag_ui.py
 
 - The UI will be available at `http://localhost:8501`
 
-### Using the API
+#### Using the API
 
 Send a POST request to `/ask` with:
 - `file`: PDF file to upload
@@ -59,6 +61,10 @@ Send a POST request to `/ask` with:
 Example using `curl`:
 ```sh
 curl -F "file=@yourfile.pdf" -F "model_name=gpt-4o-mini" -F "model_provider=openai" -F "question=What is the summary?" http://localhost:8000/ask
+```
+### Use it directly from Streamlit Community Cloud (source code is in main branch)
+```sh
+https://liu10250510-rag-rag-ui-6lttel.streamlit.app/
 ```
 
 ## Project Structure
@@ -78,7 +84,7 @@ rag/
 
 ## Notes
 
-- Make sure to add your API keys to the `.env` file.
+- Make sure to add your API keys to the `.env` file or '.streamlit/secret.toml'.
 - The `rag/data/` folder is ignored by git for privacy and storage reasons.
 - For production, run the backend and frontend separately.
 
