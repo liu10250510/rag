@@ -71,7 +71,6 @@ https://liu10250510-rag-rag-ui-6lttel.streamlit.app/
 
 ```
 rag/
-├── ragAPI.py           # FastAPI backend
 ├── rag_ui.py           # Streamlit UI
 ├── setup.py            # Environment setup
 ├── requirements.txt    # Python dependencies
