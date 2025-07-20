@@ -40,9 +40,10 @@ if uploaded_file is not None:
 if st.button("Ask") and uploaded_file and question:
     qa_chain = ragretriver(temp_file_path, model_name=model_name, model_provider=model_provider)
     if not qa_chain:
-        print("Failed to initialize the retrieval chain.")
-    # Get answer
-    answer = qa_chain.invoke(question)
-    st.write("Answer:", answer["result"])
+        st.error("Failed to initialize the retrieval chain.")
+    else:
+        # Get answer
+        answer = qa_chain.invoke(question)
+        st.write("Answer:", answer["result"])
 
 
