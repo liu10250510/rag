@@ -25,8 +25,14 @@ st.title("RAG QA Demo")
 
 uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])
 OPENAI_API_KEY = st.text_input("Enter your API Key", type="password")
-model_name = st.text_input("Model Name", value="gpt-4o-mini")
-model_provider = st.text_input("Model Provider", value="openai")
+
+# Set fixed model name and display it as read-only
+model_name = "gpt-4o-mini"  # Hardcoded model name
+st.write(f"Model name: {model_name}")
+
+model_provider = "openai"
+st.write(f"Model provider: {model_provider}")
+
 question = st.text_input("Your Question")
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 

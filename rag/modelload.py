@@ -3,7 +3,7 @@ import os
 import sys
 from langchain.chat_models import init_chat_model
 sys.path.append(".")
-from setup import setup_environment
+#from setup import setup_environment
 
 def load_model(model_name, model_provider="openai"):
     OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
