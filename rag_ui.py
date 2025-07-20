@@ -4,6 +4,10 @@ import subprocess
 import time
 import os
 import signal
+import tempfile
+import sys
+sys.path.append(".")
+from rag.ragretriver import ragretriver
 
 # Start Uvicorn server if not already running
 if "uvicorn" not in os.popen("ps aux").read():
@@ -24,18 +28,19 @@ model_name = st.text_input("Model Name", value="gpt-4o-mini")
 model_provider = st.text_input("Model Provider", value="openai")
 question = st.text_input("Your Question")
 
-if st.button("Ask") and uploaded_file and question:
-    files = {"file": (uploaded_file.name, uploaded_file, "application/pdf")}
-    data = {
-        "model_name": model_name,
-        "model_provider": model_provider,
-        "question": question
-    }
-    response = requests.post("http://localhost:8000/ask", files=files, data=data)
-    if response.ok:
-        st.success(response.json()["answer"])
-    else:
-        st.error(response.json().get("error", "Unknown error"))
+if uploaded_file is not None:
 
+    # Save the file to a temporary location
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_file.write(uploaded_file.read())
+        temp_file_path = temp_file.name
+
+if st.button("Ask") and uploaded_file and question:
+    qa_chain = ragretriver(temp_file_path, model_name=model_name, model_provider=model_provider)
+    if not qa_chain:
+        print("Failed to initialize the retrieval chain.")
+    # Get answer
+    answer = qa_chain.invoke(question)
+    st.write("Answer:", answer["result"])
 
 
