@@ -6,17 +6,12 @@ sys.path.append(".")
 from setup import setup_environment
 
 def load_model(model_name, model_provider="openai"):
-
-    try:
-        if not os.environ.get("OPENAI_API_KEY"):
-            os.environ["OPENAI_API_KEY"] = getpass.getpass("Enter API key for OpenAI: ")
-
-
-        model = init_chat_model("gpt-4o-mini", model_provider="openai")
-    except Exception as e:
-        print(f"Error initializing model: {e}")
+    OPENAI_API_KEY = os.environ.get(["OPENAI_API_KEY"])
+    model = init_chat_model("gpt-4o-mini", model_provider="openai")
+    if not model:
+        print("Failed to load the model.")
         return None
-
+    print("Model loaded successfully.")
     return model
 
 if __name__ == "__main__":

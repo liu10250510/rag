@@ -24,9 +24,11 @@ else:
 st.title("RAG QA Demo")
 
 uploaded_file = st.file_uploader("Upload a PDF", type=["pdf"])
+OPENAI_API_KEY = st.text_input("Enter your API Key", type="password")
 model_name = st.text_input("Model Name", value="gpt-4o-mini")
 model_provider = st.text_input("Model Provider", value="openai")
 question = st.text_input("Your Question")
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 if uploaded_file is not None:
 
